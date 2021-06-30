@@ -4,17 +4,18 @@ import PropTypes from "prop-types";
 function Item(props){
   return (
     <React.Fragment>
-      <h3>{props.names}</h3>
+      <h3>{props.name}</h3>
       <p>{props.description}</p>
+      <p>{props.quantity}</p>
       <hr/>
     </React.Fragment>
   )
 }
 
-Item.propType = {
-  names: PropTypes.string.isRequired,
+Item.propTypes = {
+  name: PropTypes.string.isRequired,
   description: PropTypes.string,
   quantity: PropTypes.string.isRequired 
-}
+};
 
 export default Item;

@@ -6,7 +6,7 @@ function ItemList(props) {
   return (
     <React.Fragment>
       <hr/>
-      {props.ItemList.Map((item, index) =>
+      {props.itemList.map((item, index) =>
         <Item name={item.name}
           description={item.description}
           quantity={item.quantity}

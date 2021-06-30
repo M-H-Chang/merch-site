@@ -10,7 +10,7 @@ class ItemControl extends React.Component {
       masterItemList: []
     };
   }
-
+  
   handleClick = () => {
     this.setState(prevState => ({
       formVisibleOnPage: !prevState.formVisibleOnPage

@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./components/Header";
-import ItemControl from "./components/ItemControl";
+import Header from "./Header";
+import ItemControl from "./ItemControl";
 
 
 function App() {
