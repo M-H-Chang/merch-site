@@ -1,38 +1,31 @@
 import React from "react";
-import {v4} from 'uuid';
+import { v4 } from "uuid";
 import PropTypes from "prop-types";
+import ReusableForm from "./ReusableForm";
 
-
-function NewItemForm(props){
-  function handleNewTicketFormSubmission(event) {
+function NewItemForm(props) {
+  function handleNewItemFormSubmission(event) {
     event.preventDefault();
-    props.onNewItemCreation({name: event.target.name.value, description: event.target.description.value, quantity: event.target.quantity.value, id: v4()})
+    props.onNewItemCreation({
+      name: event.target.name.value,
+      description: event.target.description.value,
+      quantity: event.target.quantity.value,
+      id: v4(),
+    });
   }
 
   NewItemForm.propTypes = {
-    onNewItemCreation: PropTypes.func
-  }
+    onNewItemCreation: PropTypes.func,
+  };
 
   return (
     <React.Fragment>
-      <form onSubmit={handleNewTicketFormSubmission}>
-        <input
-        type='text'
-        name='name'
-        placeholder='Item Name' />
-        <input
-        type='text'
-        name='description'
-        placeholder='Description' />
-        <input
-        type='number'
-        name='quantity'
-        placeholder='Number of Items' />
-        <button type='submit'>Add Item</button>
-      </form>
+      <ReusableForm
+        formSubmissionHandler={handleNewItemFormSubmission}
+        buttonText="Add Item"
+      />
     </React.Fragment>
-  )
+  );
 }
 
 export default NewItemForm;
-
